@@ -1,0 +1,125 @@
+.project {
+    @include flex-all-center;
+
+    @include tablet {
+        display: block;
+    }
+
+    .back-to {
+        margin-bottom: 60px;
+
+        @include desktop {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__container {
+        @include desktop {
+            padding: 150px 0 40px;
+        }
+
+        @include tablet {
+            padding-top: 40px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        gap: 40px;
+
+        @include desktop {
+            gap: 25px;
+        }
+    }
+
+    &__block {
+        @include desktop {
+            order: -1;
+        }
+    }
+
+    .section-label span {
+        @include desktop {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+.block-project {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @include desktop {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    @include small-tablet {
+        gap: 15px;
+    }
+
+    &__image,
+    &__info {
+        flex-basis: calc(100% / 2);
+        flex-shrink: 0;
+
+        @include desktop {
+            flex-basis: auto;
+        }
+    }
+
+    &__image {
+        height: 478px;
+        overflow: hidden;
+
+        @include desktop {
+            height: 380px;
+            width: 100%;
+        }
+
+        @include tablet {
+            height: 300px;
+        }
+
+        @include small-tablet {
+            height: 167px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 44px;
+        text-transform: uppercase;
+        margin: 0 0 30px;
+
+        @include small-tablet {
+            font-size: 18px;
+            line-height: 25px;
+        }
+    }
+
+    &__desc p {
+        margin: 0;
+        @include mb(20px);
+        font-size: 20px;
+        line-height: 30px;
+        text-align: justify;
+
+        @include tablet {
+            font-size: 16px;
+            line-height: 21px;
+        }
+
+        @include small-tablet {
+            @include mb(15px);
+        }
+    }
+}

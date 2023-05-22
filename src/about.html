@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+    @include('partials/preloader.html')
+    <div class="site-container">
+        @include('partials/header.html')
+        <main class="main">
+            <section class="about section-animation">
+                <div class="about__container container">
+                    <div class="about__video">
+                        <img src="img/about-team.webp" alt="">
+                    </div>
+                    <div class="about__content">
+                        <h1 class="about__title section-title">
+                            About Us
+                        </h1>
+                        <div class="about__info">
+                            <p class="about__desc">
+                                Dov Kram Ltd construction company is one that is known for its high-quality work,
+                                attention to
+                                detail, and customer satisfaction. We employ skilled and experienced professionals who
+                                are able to
+                                handle all aspects of the construction process, from initial planning and design to
+                                final completion
+                                and cleanup. We use the best materials and techniques to ensure that the finished
+                                product is
+                                durable, functional, and aesthetically pleasing.</p>
+                            <p class="about__desc">Dov Kram Ltd is also known for its reliability and
+                                professionalism,
+                                completing
+                                projects on time and
+                                within budget. Overall, Dov Kram Ltd is one that is highly regarded in the industry and
+                                trusted by
+                                its clients to deliver exceptional results.</p>
+                        </div>
+                    </div>
+                    <div class="section-label">
+                        <span>ABOUT US</span>
+                    </div>
+                </div>
+            </section>
+            @include('partials/team.html')
+        </main>
+        @include('partials/footer.html')
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+@keyframes fade {
+    from {
+        opacity: 0.1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// подключения компонентов страницы
+@import "./components/preloader";
+@import "./components/header";
+@import "./components/nav";
+@import "./components/hero";
+@import "./components/about";
+@import "./components/team";
+@import "./components/services";
+@import "./components/property";
+@import "./components/gallery";
+@import "./components/reviews";
+@import "./components/contacts";
+@import "./components/project";
+@import "./components/footer";
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 55;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(40px);
+    transition: transform 1s ease-in-out, opacity .5s ease-in-out, visibility .5s ease-in-out;
+
+    @include desktop {
+        overflow: auto;
+    }
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+.fancybox__thumb {
+    border-radius: 0;
+}
+
+.fancybox__thumbs .carousel__slide .fancybox__thumb::after {
+    border-width: 1px !important;
+    border-color: #D9C238 !important;
+}
+
+.button-sound {
+    @include flex-all-center;
+
+    g {
+        display: none;
+        animation: fade .25s ease-in-out;
+    }
+
+    &.muted g {
+        display: block;
+    }
+}

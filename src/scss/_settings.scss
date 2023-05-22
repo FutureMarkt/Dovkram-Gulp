@@ -1,0 +1,269 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.page {
+  height: auto;
+  font-family: var(--font-family, sans-serif);
+  -webkit-text-size-adjust: 100%;
+
+  &.lang {
+    font-family: "Alef-Regular", sans-serif;
+  }
+}
+
+.page__body {
+  margin: 0;
+  height: 100%;
+  font-size: 16px;
+  background-color: var(--god-color);
+  color: var(--light-color);
+}
+
+.main {
+  height: 100%;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+a {
+  color: inherit;
+}
+
+.site-container {
+  // overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
+  position: relative;
+  height: 100%;
+
+  &:after {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: 50;
+    transition: opacity .25s ease-in-out, visibility .25s ease-in-out;
+  }
+
+  &.hidden:after {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.is-hidden {
+  display: none !important;
+  /* stylelint-disable-line declaration-no-important */
+}
+
+
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.input-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width);
+
+  @include desktop {
+    padding: 0;
+    max-width: calc(100% - 40px);
+  }
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.centered {
+  text-align: center;
+}
+
+.dis-scroll {
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  overscroll-behavior: none;
+}
+
+.page--ios .dis-scroll {
+  position: relative;
+}
+
+.section-title {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 49px;
+
+  @include small-tablet {
+    font-size: 21px;
+    line-height: 29px;
+  }
+}
+
+.page-title {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 44px;
+}
+
+
+.section-label {
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  &.to-left span {
+    transform: rotate(-180deg);
+  }
+
+  span {
+    font-size: 24px;
+    line-height: 33px;
+    white-space: pre;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 20px;
+
+    @include small-tablet {
+      font-size: 16px;
+      line-height: 22px;
+      gap: 15px;
+    }
+
+    &:after {
+      display: block;
+      content: '';
+      // bottom: -45%;
+      // left: 17px;
+      height: 50%;
+      width: 1px;
+      background: linear-gradient(to bottom, #ffffff, #b9b9b9, #777777, #3b3b3b, #0c0c0c);
+
+      // position: absolute;
+    }
+
+    &:before {
+      display: block;
+      content: '';
+      // position: absolute;
+      // top: -45%;
+      // left: 17px;
+      height: 50%;
+      width: 1px;
+      background: linear-gradient(to top, #ffffff, #b9b9b9, #777777, #3b3b3b, #0c0c0c);
+    }
+  }
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--light-color);
+  padding: 15px;
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: inherit;
+  transition: color .25s ease-in-out, background-color .25s ease-in-out;
+
+  &:hover {
+    color: var(--god-color);
+    background-color: var(--light-color);
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  transition: opacity .25s ease-in-out;
+
+  &:after {
+    font-size: 40px;
+    color: var(--light-color);
+  }
+
+}
+
+
+.back-to {
+  @include flex-v-center;
+  gap: 15px;
+
+  span {
+    font-size: 20px;
+    line-height: 27px;
+  }
+}
+
+section {
+  transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+}
+
+.section-animation {
+  transform: translateY(20px);
+  opacity: 0;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" class="page lang">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  @include('partials/preloader.html')
+
+  <div class="site-container">
+    @include('partials/header-lang.html')
+    <main class="main">
+      <section class="hero">
+        <div class="hero__image">
+          <img src="img/hero-bg.webp" alt="">
+        </div>
+        <div class="hero__video">
+          <video autoplay="" loop="" playsinline="" webkit-playsinline="" x-webkit-airplay="" x5-video-player-type="h5"
+            x5-playsinline="" preload="" muted>
+            <source type="video/mp4">
+          </video>
+        </div>
+        <div class="hero__container container">
+          <a href="about.html" class="hero__arrow lang btn-reset">
+            <svg width="21" height="13" viewBox="0 0 21 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20.0303 7.03033C20.3232 6.73744 20.3232 6.26256 20.0303 5.96967L15.2574 1.1967C14.9645 0.903806 14.4896 0.903806 14.1967 1.1967C13.9038 1.48959 13.9038 1.96447 14.1967 2.25736L18.4393 6.5L14.1967 10.7426C13.9038 11.0355 13.9038 11.5104 14.1967 11.8033C14.4896 12.0962 14.9645 12.0962 15.2574 11.8033L20.0303 7.03033ZM0.5 7.25L19.5 7.25V5.75L0.5 5.75L0.5 7.25Z"
+                fill="white" />
+            </svg>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+<!-- <picture>
+        <source srcset="img/cover.webp" type="image/webp">
+        <img loading="lazy" src="img/cover.jpg" class="image">
+      </picture> -->
+
+</html>

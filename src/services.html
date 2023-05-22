@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+    @include('partials/preloader.html')
+
+    <div class="site-container">
+        @include('partials/header.html')
+        <main class="main">
+            <section class="property section-animation">
+                <div class="property__container container">
+                    <div class="property__tabs">
+                        <button class="property__tab active btn-reset">GENERAL CONTRACTING</button>
+                        <button class="property__tab btn-reset">PROJECT MANAGEMENT</button>
+                    </div>
+                    <div class="property__items">
+                        <div class="property__item active item-property">
+                            <p class="item-property__desc">
+                                Management and Construction: Turn-Key Service with One Contract, One Point of
+                                Contact, One Address for all of your Needs.For the most hands off approach available
+                                in Israel which alleviates headaches and the need for day to day involvement this is
+                                the service of choice. From identifying a property, negotiating the purchase,
+                                financing, design and planning, permitting, building the team of engineers and
+                                consultants, selecting and purchasing the materials. Custom imports, custom
+                                manufacturing, financial management and project oversight and most importantly, one
+                                singular provider for all warranties.td is one that is highly regarded in the
+                                industry and trusted by its clients to deliver exceptional results.
+                            </p>
+                            <div class="item-property__image">
+                                <img src="img/services/image-1.webp" alt="">
+                            </div>
+                            <div class="section-label">
+                                <span>GENERAL CONTRACTING</span>
+                            </div>
+                        </div>
+                        <div class="property__item item-property">
+                            <p class="item-property__desc">
+                                Oversight and assistance in all aspects that relate to your property and construction.
+                                Assistance in securing terms and contracts with all service providers. Approval of all
+                                payments that are then handled by the customer or a third party service. Oversight of
+                                the project and the on-site management and construction crews.
+                            </p>
+                            <div class="item-property__image">
+                                <img src="img/services/image-2.webp" alt="">
+                            </div>
+                            <div class="section-label">
+                                <span>PROJECT MANAGEMENT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        @include('partials/footer.html')
+        @include('partials/luxurious-property.html')
+        @include('partials/high-end-property.html')
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+.property {
+    padding-top: 170px;
+    padding-bottom: 40px;
+
+    @include mobile {
+        padding-top: 140px;
+    }
+
+    &__tabs {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 30px;
+
+        @include mobile {
+            gap: 10px;
+        }
+    }
+
+    &.lang &__tabs {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+    }
+
+    &__tab {
+        padding: 15px 37px;
+        background-color: transparent;
+        transition: background-color .25s ease-in-out, color .25s ease-in-out, border-color .25s ease-in-out;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 27px;
+        border: 1px solid var(--light-color);
+
+        @include mobile {
+            font-size: 12px;
+            line-height: 20px;
+            padding: 15px;
+            flex-basis: calc(100% / 2);
+        }
+
+        &.active {
+            background-color: var(--light-color);
+            color: var(--god-color);
+            border-color: transparent;
+        }
+    }
+
+    .section-label {
+        @include tablet {
+            display: none;
+        }
+    }
+}
+
+.item-property {
+    display: none;
+    gap: 44px;
+    animation: fade 1s ease-in-out;
+
+    @include desktop {
+        gap: 20px;
+    }
+
+    @include tablet {
+        flex-direction: column !important;
+    }
+
+    &.active {
+        display: flex;
+    }
+
+    &__desc {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        text-align: justify;
+        margin: 0;
+
+        @include mobile {
+            font-size: 16px;
+            line-height: 21px;
+        }
+    }
+
+    &__image {
+        max-width: 486px;
+        width: 100%;
+        height: 410px;
+        flex-shrink: 0;
+        overflow: hidden;
+
+        @include tablet {
+            order: -1;
+            max-width: 100%;
+        }
+
+        @include mobile {
+            height: 200px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.property.lang .item-property {
+    flex-direction: row-reverse;
+
+
+}
